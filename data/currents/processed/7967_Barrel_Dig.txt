@@ -1,0 +1,3 @@
+PixelBarrel_BmI_S6_LAY14 3.9500
+PixelBarrel_BmO_S6_LAY14 4.0000
+PixelBarrel_BpI_S4_LAY14 3.9100

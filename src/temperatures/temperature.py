@@ -2,7 +2,7 @@ import cx_Oracle
 from datetime import timedelta
 import dateutil.parser
 
-connection = cx_Oracle.connect('cms_trk_r/1A3C5E7G:FIN@cms_omds_adg')
+connection = cx_Oracle.connect('cms_trk_r/Liwcer_2_JUI@cms_omds_adg')
 cursor = connection.cursor()
 
 #start_time = "2018-05-29 20:45:00"

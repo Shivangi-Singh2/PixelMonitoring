@@ -1,0 +1,6 @@
+PixelBarrel_BpI_S7_LAY23/channel003   13   None   2017-09-22 18:09:10.332000
+PixelBarrel_BpI_S8_LAY14/channel002   10   None   2017-09-22 18:17:01.194000
+PixelBarrel_BmO_S3_LAY14/channel003   21   None   2017-09-22 18:21:09.656000
+PixelBarrel_BpO_S4_LAY23/channel002   13.5   None   2017-09-22 18:21:33.689000
+PixelBarrel_BpO_S7_LAY14/channel003   14   None   2017-09-22 18:22:06.798000
+PixelBarrel_BmO_S2_LAY23/channel003   11   None   2017-09-22 18:22:26.059000

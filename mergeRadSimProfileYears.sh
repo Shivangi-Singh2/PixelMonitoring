@@ -1,7 +1,7 @@
 #!/bin/bash
 
 phase=1_newL1
-rog=BPix_BmI_SEC1_LYR1
+rog=BPix_BmI_SEC1_LYR4
 
 if [ "$phase" == "0" ]; then
     years=(2015 2016)

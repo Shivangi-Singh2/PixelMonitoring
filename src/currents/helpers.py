@@ -32,7 +32,7 @@ def get_average_leakage_current_per_layer(
         )
 
     values = leakage_current_per_readout_group.values()
-    average_leakage_current = sum(values) / len(values)
+    average_leakage_current = sum(values) / len(values) if len(values) else 0
 
     return average_leakage_current
 
@@ -82,6 +82,7 @@ def get_leakage_currents_and_temperatures_per_readout_group(
 
     # Open leakage currents file and read current vs phi
     currents_file_name = currents_directory + "/" + str(fill) + "_" + sub_system + "_HV_ByLayer.txt"
+    print(currents_file_name)
     currents_file = open(currents_file_name, 'r+')
     leakage_currents = dict(map(lambda x: x.split(), currents_file.readlines()))
 
@@ -118,6 +119,7 @@ def get_leakage_currents_and_temperatures_per_readout_group(
             leakage_current = normalize_leakage_current_to_unit_volume(leakage_current, n_rocs=n_rocs)
         leakage_current_per_readout_group[readout_group_name] = leakage_current
         temperature_per_readout_group[readout_group_name] = sensor_temperature
+        #print(readout_group_name, leakage_current, fill)
 
     return leakage_current_per_readout_group, temperature_per_readout_group
 

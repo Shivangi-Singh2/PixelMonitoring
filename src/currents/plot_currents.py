@@ -1,7 +1,11 @@
+#importing stuff
+
 from pathlib import Path
 
 import numpy as np
-import ROOT
+import ROOT                        
+
+#importing and configuring more stuff
 
 from utils import generalUtils as gUtl
 import currents.helpers as currents_helper
@@ -10,7 +14,7 @@ from utils.parserUtils import ArgumentParser, sanity_checks_leakage_current_flag
 from utils import eraUtils as eraUtl
 from utils.constants import *
 
-
+#Root configuration
 ROOT.PyConfig.IgnoreCommandLineOptions = True
 ROOT.gROOT.SetBatch(ROOT.kTRUE)
 ROOT.gStyle.SetOptFit(0o001)
@@ -18,6 +22,7 @@ ROOT.gStyle.SetPadLeftMargin(0.15)
 ROOT.gStyle.SetPadBottomMargin(0.15)
 
 
+#Function to parse Command-Line Arguments
 def __get_arguments():
     parser = ArgumentParser()
     parser.add_input_fills_flags(first_fill_required=False, last_fill_required=False)
@@ -38,15 +43,15 @@ def __get_arguments():
         help="x-axis to plot against, default=%(default)s. "
              "Can be a comma-separated list of the following keywords: "
              "lumi, fill, fluence",
-        default="lumi",
+        default="fluence",
     ),
-    parser.add_y_axis_range_flags(defaults=(0., 40.))
+    parser.add_y_axis_range_flags(defaults=(0., 4000.))
 
     args = parser.parse_args()
     sanity_checks_leakage_current_flags(args)
     return args
 
-
+#Sanity Check, Ensures they don't provide both fill numbers and an era at the same time
 def __do_sanity_checks(args):
     assert (args.first_fill and args.last_fill) or args.era
     assert (args.first_fill and args.last_fill) != args.era
@@ -78,6 +83,12 @@ def __do_sanity_checks(args):
 #         currents[str(fill)]= I
 
 #     return  currents
+
+
+#Loops through each fill and layer
+#Calls a helper function to compute the average leakage current
+#Stores the results in a nested dictionary
+#Returns the dictionary for further analysis or plotting
 
 
 def __get_average_leakage_current_per_fill_per_layer(
@@ -112,7 +123,7 @@ def __get_average_leakage_current_per_fill_per_layer(
 
     return average_leakage_currents
 
-
+#preparing data for use depending on user choice of x axis
 def __get_multi_graph(
         currents,
         fills,
@@ -122,7 +133,7 @@ def __get_multi_graph(
         Xaxis,
     ):
 
-    x_label = "Fill Number"
+    x_label = "Fill Number"  #probably needs to be changed according to the plots we are getting/ probably we can change this section of code to save all graphs instead of one at a time
     y_label = "Leakage current I [#mu A / cm^{3}]"
 
     lumi = np.array([integrated_lumi_per_fill[fill] for fill in fills])
@@ -140,7 +151,11 @@ def __get_multi_graph(
 
     elif Xaxis == "fluence": 
         for layer in layers:
-            x[layer] = lumi * average_fluence_per_layer[layer]
+            if layer in average_fluence_per_layer:
+                x[layer] = lumi * average_fluence_per_layer[layer]
+            else:
+                print(f"Warning: Layer {layer} not found in fluence data.")
+                x[layer] = np.zeros(len(fills))  # Placeholder value for missing layer
 
     elif Xaxis == "fill": 
         for layer in layers:
@@ -253,7 +268,7 @@ def __plot_currents(output_directory, settings, currents, fluence,
     plotting_helper.set_font_size_and_offset(graph)
 
     graph.Draw("AP")
-  
+ 
     leg.SetNColumns(1)
     leg.SetFillColor(0)
     leg.SetFillStyle(0)
@@ -288,7 +303,9 @@ def __plot_currents(output_directory, settings, currents, fluence,
     #     leg.AddEntry(I.GetListOfGraphs()[3], "Layer 4","P")
 
 
-    leg.AddEntry(graph.GetListOfGraphs()[0], "Layer 1","P")
+    #leg.AddEntry(graph.GetListOfGraphs()[0], "Layer 1","P")
+    for layer in range(len(graph.GetListOfGraphs())):
+      leg.AddEntry(graph.GetListOfGraphs()[layer], "Layer %d"%(layer+1),"P")
 
     leg.Draw("same")
 
@@ -328,18 +345,33 @@ def __plot_currents(output_directory, settings, currents, fluence,
     latex.SetTextSize(0.04)
     latex.SetTextAlign(31)
     latex.DrawLatex(0.9, 0.92, text_above_top_right_corner)
-          
+   
+
+# Save the canvas in multiple formats for output
     figure_name = output_directory + "/" + settings["base_output_file_name"]
     if Xaxis == "lumi":
         figure_name += "_vs_integrated_lumi"
     elif Xaxis == "fill":
         figure_name += "_vs_fill_number"
-    elif Xaxis=="fluence":
+    elif Xaxis == "fluence":
         figure_name += "_vs_fluence"
 
-    extensions = (".pdf", ".png", ".C")
+
+## Save each individual graph within the TMultiGraph 
+    if isinstance(graph, ROOT.TMultiGraph):
+        for i in range(graph.GetListOfGraphs().GetSize()):
+            individual_graph = graph.GetListOfGraphs().At(i)
+            graph_name = f"{settings['base_output_file_name']}_graph_{i+1}_{Xaxis}"
+            individual_graph.SetName(graph_name)  
+            root_file = ROOT.TFile(f"{output_directory}/{settings['base_output_file_name']}_graphs.root", "UPDATE")
+            individual_graph.Write()
+            root_file.Close()
+
+# List of extensions for output formats
+    extensions = (".pdf", ".png", ".C", ".root")
     for extension in extensions:
         c.Print(figure_name + extension)
+    
 
 
 def main(args):
@@ -357,6 +389,7 @@ def main(args):
 
     # TODO: Where are these hard-coded numbers come from?
     # TODO: Add unit in comment
+    # This is the fluence per layer, which is later multiplied by the luminosity
     fluence = {
         "1": 3.850588e+12,
         "2": 1.634252e+12,

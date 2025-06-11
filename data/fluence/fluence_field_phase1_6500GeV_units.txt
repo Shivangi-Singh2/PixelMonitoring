@@ -1,0 +1,3 @@
+fluence: n_{eq} cm^{-2}
+r: cm
+z: cm

@@ -4,6 +4,10 @@ OLD_PATH=$PATH
 # This is will install brilws locally for the user under the Python3 version
 # specified by /cvmfs/cms-bril.cern.ch/brilconda3/bin
 export PATH=$HOME/.local/bin:/cvmfs/cms-bril.cern.ch/brilconda3/bin:$PATH
+
+
+source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/bin/thisroot.sh
+python3.9 -m venv venv
 pip install --user brilws
 
 # Check installation
