@@ -1,7 +1,7 @@
 #!/bin/bash
 
-year=2022
-rog=BPix_BmI_SEC1_LYR4
+year=2022 
+rog=BPix_BmI_SEC1_LYR1
 
 time_flags='-di 1200 -df 1200 -tsi 3600 -tsf 3600'
 
@@ -25,7 +25,7 @@ elif [ "$year" == "2016" ]; then
     )
     
 elif [ "$year" == "2017" ]; then
-    fill_info=data/fills_info/all_fills.csv
+    fill_info=data/fills_info/fills_run3.csv
     ranges=(
         5659 5700 5750 5830 5900
         5950 5600 5650 5700 5750 5800
@@ -35,14 +35,14 @@ elif [ "$year" == "2017" ]; then
     )
     
 elif [ "$year" == "YETS20172018" ]; then
-    fill_info=data/fills_info/all_fills.csv
+    fill_info=data/fills_info/fills_run2_yets.csv
     # 10 days: 864000
     # 1 day: 86400
     time_flags='-di 1200 -df 1200 -tsi 86400 -tsf 3600'
     ranges=(6432 6570)
 
 elif [ "$year" == "2018" ]; then
-    fill_info=data/fills_info/all_fills.csv
+    fill_info=data/fills_info/fills_run3.csv
     ranges=(
         6550 6600 6650 6600 6650 6700
         6740 6780 6850 6880 6920 6950
@@ -82,5 +82,7 @@ for ((i_range=0; i_range<${n_ranges}; i_range++)); do
     profile_name=profile_${rog}_${first_fill}_${last_fill}
     profile=${profile_name}.txt
     log_file=${log_directory}/${profile_name}.log
-    python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > ${log_file} 2>&1 &
+    python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > "${log_file}" 2>&1 &
+    #echo "${log_file}"
+    #python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip
 done  

@@ -1,0 +1,2 @@
+PixelBarrel_BpO_S2_LAY23 4.5200
+PixelBarrel_BpO_S5_LAY14 4.5400

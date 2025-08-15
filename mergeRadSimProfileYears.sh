@@ -1,13 +1,13 @@
 #!/bin/bash
 
-phase=1_newL1
-rog=BPix_BmI_SEC1_LYR4
+phase=1
+rog=BPix_BmI_SEC1_LYR1
 
 if [ "$phase" == "0" ]; then
     years=(2015 2016)
 elif [ "$phase" == "1" ]; then
-    years=(2017 2018)
-    yets=(20172018)
+    years=(2017 2018)   #edited
+    yets=(YETS20172018)
 elif [ "$phase" == "1_newL1" ]; then
     years=(2022)
     yets=(2022)

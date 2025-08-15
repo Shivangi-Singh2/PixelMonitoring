@@ -1,7 +1,7 @@
 # Run 3 monitoring commands
 
 first_fill=5659
-last_fill=7492  # to be changed the actual end of Run3
+last_fill=8497 # to be changed the actual end of Run3
 
 suffix=run3
 sub_system=Barrel
@@ -23,7 +23,7 @@ base_args="-s ${sub_system} -era ${era} -f data/fills_info/fills_run3.csv -l dat
 python src/currents/plot_currents.py ${base_args} -layers ${layers} -ymin 0 -ymax 30 -x_axes lumi,fill -current leakage
 
 # This can be run for all fills, a small range of fills or just one
-fill=8395
+fill=6450
 base_args="-s ${sub_system} -ff ${fill} -f data/fills_info/fills_run3.csv -l data/luminosity/integrated_luminosity_per_fill_run3.csv"
 python src/currents/plot_currents_vs_azimuth.py ${base_args} -ymin 0 -ymax 40 --layer 1
 python src/currents/plot_currents_vs_azimuth.py ${base_args} -ymin 0 -ymax 10 -normroc --layer 4

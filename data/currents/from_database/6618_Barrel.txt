@@ -173,8 +173,8 @@ PixelBarrel_BpI_S8_LAY23/channel003   614   None   2018-04-28 03:23:03.556000
 PixelBarrel_BmI_S4_LAY23/channel003   775   None   2018-04-28 03:23:05.365000
 PixelBarrel_BmI_S7_LAY14/channel002   758   None   2018-04-28 03:23:05.537000
 PixelBarrel_BmO_S2_LAY14/channel002   533   None   2018-04-28 03:23:05.787000
-PixelBarrel_BpO_S2_LAY14/channel002   856   None   2018-04-28 03:23:07.580000
 PixelBarrel_BpO_S2_LAY14/channel003   335.5   None   2018-04-28 03:23:07.580000
+PixelBarrel_BpO_S2_LAY14/channel002   856   None   2018-04-28 03:23:07.580000
 PixelBarrel_BpO_S4_LAY14/channel002   635.5   None   2018-04-28 03:23:07.721000
 PixelBarrel_BpO_S6_LAY14/channel002   735.5   None   2018-04-28 03:23:07.877000
 PixelBarrel_BpO_S7_LAY23/channel003   780.5   None   2018-04-28 03:23:08.002000

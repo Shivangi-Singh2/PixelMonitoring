@@ -106,9 +106,9 @@ def main(args):
                 if("_D1_" in line and ("channel002" in line or "channel003" in line)):
                     hv_currents[omds_channel_name.rsplit('1_')[0].strip()+ "1"] = current
                 elif("_D2_" in line and ("channel002" in line or "channel003" in line)):
-                    hv_currents[omds_channel_name[0].rsplit('2_')[0].strip()+ "2"] = current
+                    hv_currents[omds_channel_name.rsplit('2_')[0].strip()+ "2"] = current   #[omds_channel_name[0].rsplit fixed
                 elif("_D3_" in line and ("channel002" in line or "channel003" in line)):
-                    hv_currents[omds_channel_name[0].rsplit('3_')[0].strip()+ "3"] = current
+                    hv_currents[omds_channel_name.rsplit('3_')[0].strip()+ "3"] = current
 
             else:
                 raise ValueError(f"Invalid channel {channel} in OMDS channel name {omds_channel_name}")

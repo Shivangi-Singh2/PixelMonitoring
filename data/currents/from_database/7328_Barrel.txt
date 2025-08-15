@@ -140,8 +140,8 @@ PixelBarrel_BpI_S8_LAY23/channel003   2009   None   2018-10-21 21:29:28.381000
 PixelBarrel_BmI_S1_LAY14/channel002   1685   None   2018-10-21 21:29:29.847000
 PixelBarrel_BmI_S1_LAY14/channel003   1376   None   2018-10-21 21:29:29.863000
 PixelBarrel_BmI_S2_LAY14/channel002   2184   None   2018-10-21 21:29:29.910000
-PixelBarrel_BmI_S2_LAY23/channel003   2438   None   2018-10-21 21:29:29.956000
 PixelBarrel_BmI_S2_LAY23/channel002   1305   None   2018-10-21 21:29:29.956000
+PixelBarrel_BmI_S2_LAY23/channel003   2438   None   2018-10-21 21:29:29.956000
 PixelBarrel_BmI_S4_LAY14/channel002   2529   None   2018-10-21 21:29:30.050000
 PixelBarrel_BmI_S4_LAY23/channel003   2497   None   2018-10-21 21:29:30.097000
 PixelBarrel_BmI_S7_LAY14/channel003   1040   None   2018-10-21 21:29:30.284000
@@ -188,5 +188,5 @@ PixelBarrel_BmO_S1_LAY14/channel002   2511   None   2018-10-21 21:29:40.626000
 PixelBarrel_BmO_S3_LAY14/channel002   2902   None   2018-10-21 21:29:40.767000
 PixelBarrel_BmO_S4_LAY14/channel002   2907   None   2018-10-21 21:29:40.845000
 PixelBarrel_BmO_S5_LAY14/channel002   2508   None   2018-10-21 21:29:40.907000
-PixelBarrel_BmO_S6_LAY14/channel002   2471   None   2018-10-21 21:29:40.985000
 PixelBarrel_BmO_S6_LAY14/channel003   1074   None   2018-10-21 21:29:40.985000
+PixelBarrel_BmO_S6_LAY14/channel002   2471   None   2018-10-21 21:29:40.985000

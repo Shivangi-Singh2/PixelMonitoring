@@ -1,0 +1,5 @@
+PixelBarrel_BmI_S3_LAY23 1.8000
+PixelBarrel_BmO_S3_LAY23 1.8300
+PixelBarrel_BpI_S1_LAY23 1.8600
+PixelBarrel_BpI_S4_LAY23 2.1700
+PixelBarrel_BpO_S5_LAY23 2.2000
