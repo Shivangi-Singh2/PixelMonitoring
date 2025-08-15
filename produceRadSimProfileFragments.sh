@@ -1,6 +1,6 @@
 #!/bin/bash
 
-year=2022 
+year="LSD2"
 rog=BPix_BmI_SEC1_LYR1
 
 time_flags='-di 1200 -df 1200 -tsi 3600 -tsf 3600'
@@ -9,7 +9,7 @@ profile_directory=data/radiation_simulation/profiles/fragments
 
 
 if [ "$year" == "2015" ]; then
-    fill_info=data/fills_info/all_fills.csv
+    fill_info=data/fills_info/fills_run3.csv
     ranges=(
         3819 3850 3900 3950 4000 4050
         4100 4150 4200 4250 4300 4350
@@ -35,7 +35,7 @@ elif [ "$year" == "2017" ]; then
     )
     
 elif [ "$year" == "YETS20172018" ]; then
-    fill_info=data/fills_info/fills_run2_yets.csv
+    fill_info=data/fills_info/fills_run3.csv
     # 10 days: 864000
     # 1 day: 86400
     time_flags='-di 1200 -df 1200 -tsi 86400 -tsf 3600'
@@ -51,6 +51,13 @@ elif [ "$year" == "2018" ]; then
         7492
     )
 
+elif [ "$year" == "LSD2" ]; then
+    fill_info=data/fills_info/fills_run3.csv
+    # 10 days: 864000
+    # 1 day: 86400
+    time_flags='-di 1200 -df 1200 -tsi 8640 -tsf 3600'
+    ranges=(7492 7920)
+
 elif [ "$year" == "2022" ]; then
     fill_info=data/fills_info/fills_run3.csv
     ranges=(
@@ -59,6 +66,8 @@ elif [ "$year" == "2022" ]; then
         8160 8190 8220 8250 8280 8310
         8340 8400 8430 8460 8497 7920
         8010 8340 8400 8400 8480 8497
+        8600 8700 8800 8900 9000 9100
+        9200
     )
 
 fi
@@ -82,7 +91,7 @@ for ((i_range=0; i_range<${n_ranges}; i_range++)); do
     profile_name=profile_${rog}_${first_fill}_${last_fill}
     profile=${profile_name}.txt
     log_file=${log_directory}/${profile_name}.log
-    python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > "${log_file}" 2>&1 &
-    #echo "${log_file}"
-    #python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip
-done  
+    python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > ${log_file} 2>&1 &
+    #python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip 
+done
+

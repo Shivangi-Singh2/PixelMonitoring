@@ -13,14 +13,7 @@ import currents.plotting_helpers as plotting_helper
 from utils.parserUtils import ArgumentParser, sanity_checks_leakage_current_flags
 from utils import eraUtils as eraUtl
 from utils.constants import *
-
-#Root configuration
-ROOT.PyConfig.IgnoreCommandLineOptions = True
-ROOT.gROOT.SetBatch(ROOT.kTRUE)
-ROOT.gStyle.SetOptFit(0o001)
-ROOT.gStyle.SetPadLeftMargin(0.15)
-ROOT.gStyle.SetPadBottomMargin(0.15)
-
+import utils.DrawingFunctions as df
 
 #Function to parse Command-Line Arguments
 def __get_arguments():
@@ -165,31 +158,6 @@ def __get_multi_graph(
         for layer in layers:
             y[layer] = np.array([currents[f][layer] for f in fills]) if layer in currents[fills[0]].keys() else None
 
-    # TODO: update this code
-    # elif plotType=="ROC":
-    #     y_L1 = np.array([currents[str(f)].i_roc_layer1 for f in fills])
-    #     y_L2 = np.array([currents[str(f)].i_roc_layer2 for f in fills])
-    #     y_L3 = np.array([currents[str(f)].i_roc_layer3 for f in fills])
-    #     y_L4 = np.array([currents[str(f)].i_roc_layer4 for f in fills])
-
-    # elif plotType=="DI":
-    #     y_L1 = np.array([(currents[str(f)].i_leak_layer1 - currents[str(fills[0])].i_leak_layer1) for f in fills])
-    #     y_L2 = np.array([(currents[str(f)].i_leak_layer2 - currents[str(fills[0])].i_leak_layer2) for f in fills])
-    #     y_L3 = np.array([(currents[str(f)].i_leak_layer3 - currents[str(fills[0])].i_leak_layer3) for f in fills])
-    #     y_L4 = np.array([(currents[str(f)].i_leak_layer4 - currents[str(fills[0])].i_leak_layer4) for f in fills])
-
-    # elif plotType=="DeltaROC":
-    #     y_L1 = np.array([(currents[str(f)].i_roc_layer1 - currents[str(fills[0])].i_roc_layer1) for f in fills])
-    #     y_L2 = np.array([(currents[str(f)].i_roc_layer2 - currents[str(fills[0])].i_roc_layer2) for f in fills])
-    #     y_L3 = np.array([(currents[str(f)].i_roc_layer3 - currents[str(fills[0])].i_roc_layer3) for f in fills])
-    #     y_L4 = np.array([(currents[str(f)].i_roc_layer4 - currents[str(fills[0])].i_roc_layer4) for f in fills])
-
-    # elif plotType.startswith("analog") or plotType=="digital":
-    #     y_L1 = np.array([currents[str(f)].Ana_layer14  for f in fills])
-    #     y_L2 = np.array([])
-    #     y_L3 = np.array([currents[str(f)].Ana_layer3 for f in fills])
-    #     y_L4 = np.array([])
-
     i_leak_lumi = ROOT.TMultiGraph("mg", "")
     
     for idx, layer in enumerate(y.keys()):
@@ -202,41 +170,6 @@ def __get_multi_graph(
         i_leak_lumi.Add(graph)
  
 
-    # TODO: Need to check this
-
-    # g1 = gUtl.get_graph(x_L1, y_L1, x_label, y_label, "Layer 1")
-    # g1.SetLineColor(ROOT.kTeal+4)
-    # g1.SetMarkerColor(ROOT.kTeal+4)
-    # g1.SetMarkerStyle(22)
-    # g1.SetMarkerSize(0.8)
-    # i_leak_lumi.Add(g1)
-    
-    # if not plotType.startswith("analog") and plotType!="digital":
-    #     g2 = gUtl.get_graph(x_L2, y_L2, x_label, y_label, "Layer 2")
-    #     g2.SetLineColor(ROOT.kBlue+2)
-    #     g2.SetMarkerColor(ROOT.kBlue+2)
-    #     g2.SetMarkerStyle(22)
-    #     g2.SetMarkerSize(0.8)
-    #     i_leak_lumi.Add(g2)
-
-    # g3 = gUtl.get_graph(x_L3, y_L3, x_label, y_label, "Layer 2 & 3")
-    # if not plotType.startswith("analog") and plotType!="digital": g3.SetName("Layer 3")
-    # g3.SetLineColor(ROOT.kRed+1)
-    # g3.SetMarkerStyle(22)
-    # g3.SetMarkerColor(ROOT.kRed+1)
-    # g3.SetMarkerSize(0.8)
-    # i_leak_lumi.Add(g3)
-
-
-    # if not plotType.startswith("analog") and plotType!="digital":
-    #     if sub_system != "Barrel" and era !="2016": 
-    #         g4 = gUtl.get_graph(x_L4, y_L4, x_label, y_label, "Layer 4")
-    #         g4.SetLineColor(ROOT.kBlack+1)
-    #         g4.SetMarkerStyle(22)
-    #         g4.SetMarkerColor(ROOT.kBlack+1)
-    #         g4.SetMarkerSize(0.8)
-    #         i_leak_lumi.Add(g4)
-
     return i_leak_lumi
 
 
@@ -246,7 +179,7 @@ def __plot_currents(output_directory, settings, currents, fluence,
 
     text_size = 0.043
 
-    c = ROOT.TCanvas(settings["base_output_file_name"].strip(".pdf"))
+    c = df.setup_canvas(name="")
     c.cd()
     legEdges = settings["legend_coordinates"]
     leg = ROOT.TLegend(legEdges[0], legEdges[1], legEdges[2], legEdges[3])
@@ -268,7 +201,9 @@ def __plot_currents(output_directory, settings, currents, fluence,
     plotting_helper.set_font_size_and_offset(graph)
 
     graph.Draw("AP")
- 
+  
+    df.draw_cms_details(labels=["(%s) %s TeV" % ("2022", "13.6"), settings["sub_system_text"], settings["current_text"], text],x_pos= 0.53,y_pos = 0.87, dy = 0.04, text_size = 0.035, sampleName="", cmsLabel = "Internal", padHeight = 1.0)
+
     leg.SetNColumns(1)
     leg.SetFillColor(0)
     leg.SetFillStyle(0)
@@ -276,78 +211,10 @@ def __plot_currents(output_directory, settings, currents, fluence,
     leg.SetBorderSize(0)
     leg.SetTextSize(text_size)
 
-    # TODO in a clean way
-
-    # nLayers = I.GetListOfGraphs().GetSize()
-    # 
-    # if nLayers==2:
-    #     if sub_system == "EndCap":
-    #         leg.AddEntry(I.GetListOfGraphs()[0], "Disk 1","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[1], "Disk 2","P")
-    #     else:
-    #         leg.AddEntry(I.GetListOfGraphs()[0], "Layers 1 & 4","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[1], "Layers 2 & 3","P")
-    # if nLayers==3:
-    #     if sub_system == "EndCap":
-    #         leg.AddEntry(I.GetListOfGraphs()[0], "Disk 1","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[1], "Disk 2","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[2], "Disk 3","P")
-    #     else:
-    #         leg.AddEntry(I.GetListOfGraphs()[0], "Layer 1","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[1], "Layer 2","P")
-    #         leg.AddEntry(I.GetListOfGraphs()[2], "Layer 3","P")
-    # if nLayers==4 and sub_system == "Barrel" and era!="2016":
-    #     leg.AddEntry(I.GetListOfGraphs()[0], "Layer 1","P")
-    #     leg.AddEntry(I.GetListOfGraphs()[1], "Layer 2","P")
-    #     leg.AddEntry(I.GetListOfGraphs()[2], "Layer 3","P")
-    #     leg.AddEntry(I.GetListOfGraphs()[3], "Layer 4","P")
-
-
-    #leg.AddEntry(graph.GetListOfGraphs()[0], "Layer 1","P")
-    for layer in range(len(graph.GetListOfGraphs())):
-      leg.AddEntry(graph.GetListOfGraphs()[layer], "Layer %d"%(layer+1),"P")
+    leg.AddEntry(graph.GetListOfGraphs()[0], "Layer 1","P")
 
     leg.Draw("same")
 
-    latex2 = ROOT.TLatex()
-    latex2.SetNDC()
-    latex2.SetTextFont(42)
-    latex2.SetTextSize(text_size)
-    latex2.SetTextAlign(11)
-    latex2.DrawLatex(0.53, .83, settings["sub_system_text"]);
-
-    latex3 = ROOT.TLatex()
-    latex3.SetNDC()
-    latex3.SetTextFont(42)
-    latex3.SetTextSize(text_size)
-    latex3.SetTextAlign(11)
-    latex3.DrawLatex(0.53, .77, settings["current_text"]);
-
-    latex4 = ROOT.TLatex()
-    latex4.SetNDC()
-    latex4.SetTextFont(42)
-    latex4.SetTextSize(text_size)
-    latex4.SetTextAlign(11)
-    latex4.DrawLatex(0.53, .71, text)
-
-    latex = ROOT.TLatex()
-    latex.SetNDC()
-    latex.SetTextFont(61)
-    latex.SetTextAlign(11)
-    latex.DrawLatex(0.16, 0.92, "CMS")
-    latex.SetTextFont(52)
-    latex.DrawLatex(0.24, 0.92, "Preliminary")
-
-    text_above_top_right_corner = "(%s) %s TeV" % ("2022", "13.6")
-    latex = ROOT.TLatex()
-    latex.SetNDC()
-    latex.SetTextFont(42)
-    latex.SetTextSize(0.04)
-    latex.SetTextAlign(31)
-    latex.DrawLatex(0.9, 0.92, text_above_top_right_corner)
-   
-
-# Save the canvas in multiple formats for output
     figure_name = output_directory + "/" + settings["base_output_file_name"]
     if Xaxis == "lumi":
         figure_name += "_vs_integrated_lumi"
@@ -356,23 +223,10 @@ def __plot_currents(output_directory, settings, currents, fluence,
     elif Xaxis == "fluence":
         figure_name += "_vs_fluence"
 
-
-## Save each individual graph within the TMultiGraph 
-    if isinstance(graph, ROOT.TMultiGraph):
-        for i in range(graph.GetListOfGraphs().GetSize()):
-            individual_graph = graph.GetListOfGraphs().At(i)
-            graph_name = f"{settings['base_output_file_name']}_graph_{i+1}_{Xaxis}"
-            individual_graph.SetName(graph_name)  
-            root_file = ROOT.TFile(f"{output_directory}/{settings['base_output_file_name']}_graphs.root", "UPDATE")
-            individual_graph.Write()
-            root_file.Close()
-
-# List of extensions for output formats
-    extensions = (".pdf", ".png", ".C", ".root")
+    extensions = [".pdf"]
     for extension in extensions:
         c.Print(figure_name + extension)
     
-
 
 def main(args):
 
