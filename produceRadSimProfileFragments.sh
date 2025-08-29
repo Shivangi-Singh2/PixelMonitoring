@@ -1,6 +1,6 @@
 #!/bin/bash
 
-year="LSD2"
+year="2022"
 rog=BPix_BmI_SEC1_LYR1
 
 time_flags='-di 1200 -df 1200 -tsi 3600 -tsf 3600'
@@ -91,7 +91,7 @@ for ((i_range=0; i_range<${n_ranges}; i_range++)); do
     profile_name=profile_${rog}_${first_fill}_${last_fill}
     profile=${profile_name}.txt
     log_file=${log_directory}/${profile_name}.log
-    python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > ${log_file} 2>&1 &
+    python src/radiation_simulation/prepare_profiles.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip > ${log_file} 2>&1 &
     #python src/radiation_simulation/prepare_profile.py -ff ${first_fill} -lf ${last_fill} -rog ${rog} ${time_flags} -o ${output_directory} -p ${profile} -i ${fill_info} -skip 
 done
 
