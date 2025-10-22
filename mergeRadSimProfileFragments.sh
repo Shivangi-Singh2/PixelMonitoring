@@ -1,7 +1,7 @@
 #!/bin/bash
 
 year=2022
-rog=BPix_BmI_SEC1_LYR1
+rog=BPix_BmI_SEC1_LYR4
 
 input_profile_directory=data/radiation_simulation/profiles/fragments
 output_profile_directory=data/radiation_simulation/profiles/per_year

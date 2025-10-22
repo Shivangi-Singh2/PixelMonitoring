@@ -1,3 +1,1126 @@
-Warning: Fill duration (4.633333333333334 min.) smaller than fill time delay, no data collected during fill 7142
+ *** Break *** segmentation violation
 
-FINISHED
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f40148d8fba in wait4 () from /lib64/libc.so.6
+#1  0x00007f401484b7e3 in do_system () from /lib64/libc.so.6
+#2  0x00007f4013ef82ce in TUnixSystem::StackTrace() () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libCore.so
+#3  0x00007f40140c7083 in (anonymous namespace)::TExceptionHandlerImp::HandleException(int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy_backend.so
+#4  0x00007f4013ef5861 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libCore.so
+#5  <signal handler called>
+#6  _PyObject_IS_GC (obj=0x1) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_object.h:165
+#7  visit_decref (op=0x1, parent=0x56172ba0d6e0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:456
+#8  0x0000561728e24144 in subtract_refs (containers=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:482
+#9  deduce_unreachable (base=base
+entry=0x5617298ab680, unreachable=unreachable
+entry=0x7ffc2098f3d0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1105
+#10 0x0000561728e22e98 in gc_collect_main (tstate=tstate
+entry=0x5617298c7cf0, generation=generation
+entry=0, n_collected=n_collected
+entry=0x7ffc2098f4b0, n_uncollectable=n_uncollectable
+entry=0x7ffc2098f4a8, nofail=nofail
+entry=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1239
+#11 0x0000561728ed04bb in gc_collect_with_callback (tstate=tstate
+entry=0x5617298c7cf0, generation=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1413
+#12 0x0000561728e1880b in gc_collect_generations (tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1468
+#13 _PyObject_GC_Alloc (basicsize=<optimized out>, use_calloc=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2297
+#14 _PyObject_GC_Malloc (basicsize=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2307
+#15 _PyObject_GC_New (tp=0x7f3ff5e535c0 <CPyCppyy::CPPOverload_Type>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2319
+#16 0x00007f3ff5dd6790 in CPyCppyy::(anonymous namespace)::mp_new(_typeobject*, _object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#17 0x00007f3ff5dff9e3 in CPyCppyy::BuildScopeProxyDict(unsigned long, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#18 0x00007f3ff5e021a3 in CPyCppyy::CreateScopeProxy(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#19 0x00007f3ff5e02dc5 in CPyCppyy::CreateScopeProxy(unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#20 0x00007f3ff5e02e26 in CPyCppyy::BindCppObjectNoCast(void*, unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#21 0x00007f3ff5dcb930 in CPyCppyy::dm_get(CPyCppyy::CPPDataMember*, CPyCppyy::CPPInstance*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#22 0x0000561728e3872a in type_getattro (type=<optimized out>, name=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/typeobject.c:3923
+#23 0x00007f3ff5dde0e3 in CPyCppyy::meta_getattro(_object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#24 0x0000561728e3db92 in PyObject_GetAttr (v=v
+entry=0x56172bd66250, name=0x7f40145f9c70) at /usr/local/src/conda/python-3.10.12/Objects/object.c:932
+#25 0x0000561728e34f03 in _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x561729923040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3592
+#26 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x561729923040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#27 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f40143be7b0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#28 _PyFunction_Vectorcall (func=0x7f40143be7a0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#29 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#30 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#31 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc2098fe40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#32 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40145acba0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#33 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40145acba0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#34 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc2098ff40, locals=locals
+entry=0x7f4014353b80, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#35 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401433f680, globals=globals
+entry=0x7f4014353b80, locals=locals
+entry=0x7f4014353b80) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#36 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014353b80, globals=0x7f4014353b80, source=0x7f401433f680) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#37 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#38 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f4014350c98, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#39 0x0000561728e3634b in do_call_core (kwdict=0x7f4014340340, callargs=0x7f4014350c80, func=0x7f4014b10e00, trace_info=0x7ffc20990110, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#40 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146668c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#41 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146668c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#42 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#43 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#44 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209902c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465da80, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#48 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465da80, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#49 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#50 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#51 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990470, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b37c50, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#55 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b37c50, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#56 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#57 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#58 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#59 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#60 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990620, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#61 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014360040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#62 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014360040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#63 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#64 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#65 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#66 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#67 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209907d0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#68 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f96c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#69 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f96c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#70 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#71 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#72 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc20990900, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#73 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20990990) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#74 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#75 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145e9fc0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#76 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145f8170, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x7f40145f7880, level=1) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#77 0x0000561728e34368 in import_name (level=0x7f4014a780f0, fromlist=0x7f40145f7880, name=0x7f40145f8170, f=0x7f401466df10, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#78 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401466df10, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#79 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f401466df10, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#80 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20990d10, locals=locals
+entry=0x7f40145ee400, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#81 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401435d630, globals=globals
+entry=0x7f40145ee400, locals=locals
+entry=0x7f40145ee400) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#82 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f40145ee400, globals=0x7f40145ee400, source=0x7f401435d630) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#83 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#84 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145f86d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#85 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ee540, callargs=0x7f40145f86c0, func=0x7f4014b10e00, trace_info=0x7ffc20990ee0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#86 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b3f4c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#87 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b3f4c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#88 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#89 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#90 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#91 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#92 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991090, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#93 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36130, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#94 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36130, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#95 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#96 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#97 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#98 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#99 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991240, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#100 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cee40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#101 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cee40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#102 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#103 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#104 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#105 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#106 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209913f0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#107 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce240, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#108 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce240, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#109 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#110 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#111 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#112 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#113 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209915a0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#114 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f87c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#115 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f87c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#116 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#117 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#118 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209916d0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#119 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20991760) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#120 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#121 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145ed3f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#122 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145ed3f0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#123 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40145ed3f0, f=0x7f40147cea40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#124 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cea40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#125 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cea40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#126 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20991ae0, locals=locals
+entry=0x7f4014634f00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#127 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40145de810, globals=globals
+entry=0x7f4014634f00, locals=locals
+entry=0x7f4014634f00) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#128 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014634f00, globals=0x7f4014634f00, source=0x7f40145de810) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#129 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#130 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145ed0d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#131 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ed140, callargs=0x7f40145ed0c0, func=0x7f4014b10e00, trace_info=0x7ffc20991cb0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#132 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014666200, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#133 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014666200, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#134 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#135 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#136 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#137 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#138 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991e60, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#139 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465cac0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#140 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465cac0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#141 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#142 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#143 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#144 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#145 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992010, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#146 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36ec0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#147 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36ec0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#148 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#149 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#150 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#151 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#152 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209921c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#153 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce440, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#154 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce440, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#155 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#156 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#157 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#158 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#159 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992370, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#160 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f8f40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#161 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f8f40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#162 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#163 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#164 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209924a0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#165 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20992530) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#166 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#167 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40147a0bf0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#168 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40147a0bf0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#169 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40147a0bf0, f=0x7f4014aa1c40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#170 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014aa1c40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#171 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f4014aa1c40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#172 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc209928b0, locals=locals
+entry=0x7f4014745d40, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#173 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#174 0x0000561728f0442a in run_eval_code_obj (tstate=tstate
+entry=0x5617298c7cf0, co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1291
+#175 0x0000561728eff833 in run_mod (mod=mod
+entry=0x5617299f4500, filename=filename
+entry=0x7f4014619980, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, flags=flags
+entry=0x7ffc20992a98, arena=arena
+entry=0x7f40147026f0) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1312
+#176 0x0000561728d966cd in pyrun_file (fp=fp
+entry=0x5617298a7370, filename=filename
+entry=0x7f4014619980, start=start
+entry=257, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, closeit=closeit
+entry=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1208
+#177 0x0000561728ef9d1e in _PyRun_SimpleFileObject (fp=0x5617298a7370, filename=0x7f4014619980, closeit=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:456
+#178 0x0000561728ef98b4 in _PyRun_AnyFileObject (fp=0x5617298a7370, filename=filename
+entry=0x7f4014619980, closeit=closeit
+entry=1, flags=flags
+entry=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:90
+#179 0x0000561728ef6aab in pymain_run_file_obj (skip_source_first_line=0, filename=0x7f4014619980, program_name=0x7f4014725c30) at /usr/local/src/conda/python-3.10.12/Modules/main.c:357
+#180 pymain_run_file (config=0x5617298ab7b0) at /usr/local/src/conda/python-3.10.12/Modules/main.c:376
+#181 pymain_run_python (exitcode=0x7ffc20992a94) at /usr/local/src/conda/python-3.10.12/Modules/main.c:591
+#182 Py_RunMain () at /usr/local/src/conda/python-3.10.12/Modules/main.c:670
+#183 0x0000561728ec7527 in Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/main.c:1090
+#184 0x00007f40148295d0 in __libc_start_call_main () from /lib64/libc.so.6
+#185 0x00007f4014829680 in __libc_start_main_impl () from /lib64/libc.so.6
+#186 0x0000561728ec7421 in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash. If you see question
+marks as part of the stack trace, try to recompile with debugging information
+enabled and export CLING_DEBUG=1 environment variable before running.
+You may get help by asking at the ROOT forum https://root.cern/forum
+preferably using the command (.forum bug) in the ROOT prompt.
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at https://root.cern/bugs or (preferably) using the command (.gh bug) in
+the ROOT prompt. Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#6  _PyObject_IS_GC (obj=0x1) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_object.h:165
+#7  visit_decref (op=0x1, parent=0x56172ba0d6e0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:456
+#8  0x0000561728e24144 in subtract_refs (containers=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:482
+#9  deduce_unreachable (base=base
+entry=0x5617298ab680, unreachable=unreachable
+entry=0x7ffc2098f3d0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1105
+#10 0x0000561728e22e98 in gc_collect_main (tstate=tstate
+entry=0x5617298c7cf0, generation=generation
+entry=0, n_collected=n_collected
+entry=0x7ffc2098f4b0, n_uncollectable=n_uncollectable
+entry=0x7ffc2098f4a8, nofail=nofail
+entry=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1239
+#11 0x0000561728ed04bb in gc_collect_with_callback (tstate=tstate
+entry=0x5617298c7cf0, generation=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1413
+#12 0x0000561728e1880b in gc_collect_generations (tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1468
+#13 _PyObject_GC_Alloc (basicsize=<optimized out>, use_calloc=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2297
+#14 _PyObject_GC_Malloc (basicsize=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2307
+#15 _PyObject_GC_New (tp=0x7f3ff5e535c0 <CPyCppyy::CPPOverload_Type>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2319
+#16 0x00007f3ff5dd6790 in CPyCppyy::(anonymous namespace)::mp_new(_typeobject*, _object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#17 0x00007f3ff5dff9e3 in CPyCppyy::BuildScopeProxyDict(unsigned long, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#18 0x00007f3ff5e021a3 in CPyCppyy::CreateScopeProxy(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#19 0x00007f3ff5e02dc5 in CPyCppyy::CreateScopeProxy(unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#20 0x00007f3ff5e02e26 in CPyCppyy::BindCppObjectNoCast(void*, unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#21 0x00007f3ff5dcb930 in CPyCppyy::dm_get(CPyCppyy::CPPDataMember*, CPyCppyy::CPPInstance*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#22 0x0000561728e3872a in type_getattro (type=<optimized out>, name=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/typeobject.c:3923
+#23 0x00007f3ff5dde0e3 in CPyCppyy::meta_getattro(_object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#24 0x0000561728e3db92 in PyObject_GetAttr (v=v
+entry=0x56172bd66250, name=0x7f40145f9c70) at /usr/local/src/conda/python-3.10.12/Objects/object.c:932
+#25 0x0000561728e34f03 in _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x561729923040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3592
+#26 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x561729923040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#27 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f40143be7b0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#28 _PyFunction_Vectorcall (func=0x7f40143be7a0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#29 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#30 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#31 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc2098fe40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#32 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40145acba0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#33 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40145acba0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#34 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc2098ff40, locals=locals
+entry=0x7f4014353b80, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#35 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401433f680, globals=globals
+entry=0x7f4014353b80, locals=locals
+entry=0x7f4014353b80) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#36 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014353b80, globals=0x7f4014353b80, source=0x7f401433f680) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#37 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#38 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f4014350c98, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#39 0x0000561728e3634b in do_call_core (kwdict=0x7f4014340340, callargs=0x7f4014350c80, func=0x7f4014b10e00, trace_info=0x7ffc20990110, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#40 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146668c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#41 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146668c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#42 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#43 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#44 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209902c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465da80, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#48 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465da80, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#49 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#50 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#51 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990470, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b37c50, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#55 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b37c50, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#56 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#57 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#58 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#59 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#60 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990620, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#61 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014360040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#62 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014360040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#63 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#64 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#65 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#66 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#67 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209907d0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#68 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f96c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#69 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f96c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#70 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#71 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#72 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc20990900, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#73 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20990990) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#74 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#75 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145e9fc0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#76 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145f8170, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x7f40145f7880, level=1) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#77 0x0000561728e34368 in import_name (level=0x7f4014a780f0, fromlist=0x7f40145f7880, name=0x7f40145f8170, f=0x7f401466df10, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#78 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401466df10, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#79 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f401466df10, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#80 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20990d10, locals=locals
+entry=0x7f40145ee400, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#81 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401435d630, globals=globals
+entry=0x7f40145ee400, locals=locals
+entry=0x7f40145ee400) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#82 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f40145ee400, globals=0x7f40145ee400, source=0x7f401435d630) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#83 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#84 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145f86d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#85 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ee540, callargs=0x7f40145f86c0, func=0x7f4014b10e00, trace_info=0x7ffc20990ee0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#86 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b3f4c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#87 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b3f4c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#88 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#89 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#90 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#91 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#92 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991090, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#93 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36130, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#94 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36130, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#95 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#96 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#97 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#98 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#99 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991240, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#100 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cee40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#101 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cee40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#102 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#103 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#104 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#105 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#106 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209913f0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#107 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce240, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#108 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce240, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#109 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#110 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#111 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#112 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#113 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209915a0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#114 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f87c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#115 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f87c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#116 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#117 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#118 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209916d0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#119 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20991760) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#120 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#121 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145ed3f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#122 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145ed3f0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#123 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40145ed3f0, f=0x7f40147cea40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#124 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cea40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#125 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cea40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#126 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20991ae0, locals=locals
+entry=0x7f4014634f00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#127 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40145de810, globals=globals
+entry=0x7f4014634f00, locals=locals
+entry=0x7f4014634f00) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#128 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014634f00, globals=0x7f4014634f00, source=0x7f40145de810) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#129 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#130 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145ed0d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#131 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ed140, callargs=0x7f40145ed0c0, func=0x7f4014b10e00, trace_info=0x7ffc20991cb0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#132 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014666200, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#133 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014666200, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#134 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#135 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#136 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#137 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#138 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991e60, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#139 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465cac0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#140 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465cac0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#141 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#142 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#143 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#144 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#145 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992010, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#146 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36ec0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#147 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36ec0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#148 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#149 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#150 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#151 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#152 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209921c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#153 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce440, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#154 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce440, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#155 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#156 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#157 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#158 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#159 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992370, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#160 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f8f40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#161 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f8f40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#162 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#163 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#164 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209924a0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#165 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20992530) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#166 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#167 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40147a0bf0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#168 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40147a0bf0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#169 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40147a0bf0, f=0x7f4014aa1c40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#170 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014aa1c40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#171 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f4014aa1c40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#172 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc209928b0, locals=locals
+entry=0x7f4014745d40, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#173 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#174 0x0000561728f0442a in run_eval_code_obj (tstate=tstate
+entry=0x5617298c7cf0, co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1291
+#175 0x0000561728eff833 in run_mod (mod=mod
+entry=0x5617299f4500, filename=filename
+entry=0x7f4014619980, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, flags=flags
+entry=0x7ffc20992a98, arena=arena
+entry=0x7f40147026f0) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1312
+#176 0x0000561728d966cd in pyrun_file (fp=fp
+entry=0x5617298a7370, filename=filename
+entry=0x7f4014619980, start=start
+entry=257, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, closeit=closeit
+entry=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1208
+#177 0x0000561728ef9d1e in _PyRun_SimpleFileObject (fp=0x5617298a7370, filename=0x7f4014619980, closeit=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:456
+#178 0x0000561728ef98b4 in _PyRun_AnyFileObject (fp=0x5617298a7370, filename=filename
+entry=0x7f4014619980, closeit=closeit
+entry=1, flags=flags
+entry=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:90
+#179 0x0000561728ef6aab in pymain_run_file_obj (skip_source_first_line=0, filename=0x7f4014619980, program_name=0x7f4014725c30) at /usr/local/src/conda/python-3.10.12/Modules/main.c:357
+#180 pymain_run_file (config=0x5617298ab7b0) at /usr/local/src/conda/python-3.10.12/Modules/main.c:376
+#181 pymain_run_python (exitcode=0x7ffc20992a94) at /usr/local/src/conda/python-3.10.12/Modules/main.c:591
+#182 Py_RunMain () at /usr/local/src/conda/python-3.10.12/Modules/main.c:670
+#183 0x0000561728ec7527 in Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/main.c:1090
+#184 0x00007f40148295d0 in __libc_start_call_main () from /lib64/libc.so.6
+#185 0x00007f4014829680 in __libc_start_main_impl () from /lib64/libc.so.6
+#186 0x0000561728ec7421 in _start ()
+===========================================================
+
+
+ *** Break *** segmentation violation
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f40148d8fba in wait4 () from /lib64/libc.so.6
+#1  0x00007f401484b7e3 in do_system () from /lib64/libc.so.6
+#2  0x00007f4013ef82ce in TUnixSystem::StackTrace() () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libCore.so
+#3  0x00007f40140c6f03 in (anonymous namespace)::TExceptionHandlerImp::HandleException(int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy_backend.so
+#4  0x00007f4013ef5861 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libCore.so
+#5  <signal handler called>
+#6  _PyObject_IS_GC (obj=0x1) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_object.h:165
+#7  visit_decref (op=0x1, parent=0x56172ba0d6e0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:456
+#8  0x0000561728e24144 in subtract_refs (containers=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:482
+#9  deduce_unreachable (base=base
+entry=0x5617298ab680, unreachable=unreachable
+entry=0x7ffc2098f3d0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1105
+#10 0x0000561728e22e98 in gc_collect_main (tstate=tstate
+entry=0x5617298c7cf0, generation=generation
+entry=0, n_collected=n_collected
+entry=0x7ffc2098f4b0, n_uncollectable=n_uncollectable
+entry=0x7ffc2098f4a8, nofail=nofail
+entry=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1239
+#11 0x0000561728ed04bb in gc_collect_with_callback (tstate=tstate
+entry=0x5617298c7cf0, generation=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1413
+#12 0x0000561728e1880b in gc_collect_generations (tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1468
+#13 _PyObject_GC_Alloc (basicsize=<optimized out>, use_calloc=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2297
+#14 _PyObject_GC_Malloc (basicsize=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2307
+#15 _PyObject_GC_New (tp=0x7f3ff5e535c0 <CPyCppyy::CPPOverload_Type>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2319
+#16 0x00007f3ff5dd6790 in CPyCppyy::(anonymous namespace)::mp_new(_typeobject*, _object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#17 0x00007f3ff5dff9e3 in CPyCppyy::BuildScopeProxyDict(unsigned long, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#18 0x00007f3ff5e021a3 in CPyCppyy::CreateScopeProxy(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#19 0x00007f3ff5e02dc5 in CPyCppyy::CreateScopeProxy(unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#20 0x00007f3ff5e02e26 in CPyCppyy::BindCppObjectNoCast(void*, unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#21 0x00007f3ff5dcb930 in CPyCppyy::dm_get(CPyCppyy::CPPDataMember*, CPyCppyy::CPPInstance*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#22 0x0000561728e3872a in type_getattro (type=<optimized out>, name=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/typeobject.c:3923
+#23 0x00007f3ff5dde0e3 in CPyCppyy::meta_getattro(_object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#24 0x0000561728e3db92 in PyObject_GetAttr (v=v
+entry=0x56172bd66250, name=0x7f40145f9c70) at /usr/local/src/conda/python-3.10.12/Objects/object.c:932
+#25 0x0000561728e34f03 in _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x561729923040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3592
+#26 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x561729923040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#27 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f40143be7b0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#28 _PyFunction_Vectorcall (func=0x7f40143be7a0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#29 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#30 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#31 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc2098fe40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#32 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40145acba0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#33 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40145acba0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#34 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc2098ff40, locals=locals
+entry=0x7f4014353b80, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#35 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401433f680, globals=globals
+entry=0x7f4014353b80, locals=locals
+entry=0x7f4014353b80) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#36 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014353b80, globals=0x7f4014353b80, source=0x7f401433f680) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#37 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#38 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f4014350c98, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#39 0x0000561728e3634b in do_call_core (kwdict=0x7f4014340340, callargs=0x7f4014350c80, func=0x7f4014b10e00, trace_info=0x7ffc20990110, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#40 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146668c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#41 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146668c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#42 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#43 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#44 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209902c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465da80, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#48 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465da80, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#49 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#50 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#51 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990470, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b37c50, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#55 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b37c50, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#56 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#57 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#58 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#59 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#60 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990620, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#61 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014360040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#62 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014360040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#63 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#64 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#65 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#66 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#67 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209907d0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#68 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f96c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#69 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f96c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#70 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#71 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#72 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc20990900, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#73 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20990990) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#74 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#75 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145e9fc0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#76 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145f8170, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x7f40145f7880, level=1) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#77 0x0000561728e34368 in import_name (level=0x7f4014a780f0, fromlist=0x7f40145f7880, name=0x7f40145f8170, f=0x7f401466df10, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#78 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401466df10, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#79 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f401466df10, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#80 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20990d10, locals=locals
+entry=0x7f40145ee400, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#81 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401435d630, globals=globals
+entry=0x7f40145ee400, locals=locals
+entry=0x7f40145ee400) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#82 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f40145ee400, globals=0x7f40145ee400, source=0x7f401435d630) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#83 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#84 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145f86d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#85 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ee540, callargs=0x7f40145f86c0, func=0x7f4014b10e00, trace_info=0x7ffc20990ee0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#86 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b3f4c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#87 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b3f4c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#88 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#89 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#90 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#91 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#92 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991090, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#93 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36130, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#94 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36130, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#95 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#96 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#97 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#98 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#99 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991240, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#100 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cee40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#101 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cee40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#102 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#103 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#104 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#105 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#106 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209913f0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#107 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce240, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#108 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce240, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#109 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#110 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#111 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#112 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#113 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209915a0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#114 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f87c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#115 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f87c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#116 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#117 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#118 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209916d0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#119 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20991760) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#120 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#121 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145ed3f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#122 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145ed3f0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#123 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40145ed3f0, f=0x7f40147cea40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#124 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cea40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#125 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cea40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#126 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20991ae0, locals=locals
+entry=0x7f4014634f00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#127 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40145de810, globals=globals
+entry=0x7f4014634f00, locals=locals
+entry=0x7f4014634f00) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#128 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014634f00, globals=0x7f4014634f00, source=0x7f40145de810) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#129 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#130 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145ed0d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#131 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ed140, callargs=0x7f40145ed0c0, func=0x7f4014b10e00, trace_info=0x7ffc20991cb0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#132 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014666200, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#133 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014666200, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#134 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#135 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#136 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#137 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#138 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991e60, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#139 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465cac0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#140 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465cac0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#141 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#142 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#143 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#144 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#145 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992010, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#146 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36ec0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#147 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36ec0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#148 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#149 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#150 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#151 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#152 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209921c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#153 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce440, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#154 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce440, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#155 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#156 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#157 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#158 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#159 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992370, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#160 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f8f40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#161 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f8f40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#162 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#163 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#164 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209924a0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#165 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20992530) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#166 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#167 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40147a0bf0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#168 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40147a0bf0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#169 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40147a0bf0, f=0x7f4014aa1c40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#170 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014aa1c40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#171 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f4014aa1c40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#172 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc209928b0, locals=locals
+entry=0x7f4014745d40, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#173 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#174 0x0000561728f0442a in run_eval_code_obj (tstate=tstate
+entry=0x5617298c7cf0, co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1291
+#175 0x0000561728eff833 in run_mod (mod=mod
+entry=0x5617299f4500, filename=filename
+entry=0x7f4014619980, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, flags=flags
+entry=0x7ffc20992a98, arena=arena
+entry=0x7f40147026f0) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1312
+#176 0x0000561728d966cd in pyrun_file (fp=fp
+entry=0x5617298a7370, filename=filename
+entry=0x7f4014619980, start=start
+entry=257, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, closeit=closeit
+entry=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1208
+#177 0x0000561728ef9d1e in _PyRun_SimpleFileObject (fp=0x5617298a7370, filename=0x7f4014619980, closeit=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:456
+#178 0x0000561728ef98b4 in _PyRun_AnyFileObject (fp=0x5617298a7370, filename=filename
+entry=0x7f4014619980, closeit=closeit
+entry=1, flags=flags
+entry=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:90
+#179 0x0000561728ef6aab in pymain_run_file_obj (skip_source_first_line=0, filename=0x7f4014619980, program_name=0x7f4014725c30) at /usr/local/src/conda/python-3.10.12/Modules/main.c:357
+#180 pymain_run_file (config=0x5617298ab7b0) at /usr/local/src/conda/python-3.10.12/Modules/main.c:376
+#181 pymain_run_python (exitcode=0x7ffc20992a94) at /usr/local/src/conda/python-3.10.12/Modules/main.c:591
+#182 Py_RunMain () at /usr/local/src/conda/python-3.10.12/Modules/main.c:670
+#183 0x0000561728ec7527 in Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/main.c:1090
+#184 0x00007f40148295d0 in __libc_start_call_main () from /lib64/libc.so.6
+#185 0x00007f4014829680 in __libc_start_main_impl () from /lib64/libc.so.6
+#186 0x0000561728ec7421 in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash. If you see question
+marks as part of the stack trace, try to recompile with debugging information
+enabled and export CLING_DEBUG=1 environment variable before running.
+You may get help by asking at the ROOT forum https://root.cern/forum
+preferably using the command (.forum bug) in the ROOT prompt.
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at https://root.cern/bugs or (preferably) using the command (.gh bug) in
+the ROOT prompt. Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#6  _PyObject_IS_GC (obj=0x1) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_object.h:165
+#7  visit_decref (op=0x1, parent=0x56172ba0d6e0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:456
+#8  0x0000561728e24144 in subtract_refs (containers=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:482
+#9  deduce_unreachable (base=base
+entry=0x5617298ab680, unreachable=unreachable
+entry=0x7ffc2098f3d0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1105
+#10 0x0000561728e22e98 in gc_collect_main (tstate=tstate
+entry=0x5617298c7cf0, generation=generation
+entry=0, n_collected=n_collected
+entry=0x7ffc2098f4b0, n_uncollectable=n_uncollectable
+entry=0x7ffc2098f4a8, nofail=nofail
+entry=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1239
+#11 0x0000561728ed04bb in gc_collect_with_callback (tstate=tstate
+entry=0x5617298c7cf0, generation=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1413
+#12 0x0000561728e1880b in gc_collect_generations (tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:1468
+#13 _PyObject_GC_Alloc (basicsize=<optimized out>, use_calloc=0) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2297
+#14 _PyObject_GC_Malloc (basicsize=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2307
+#15 _PyObject_GC_New (tp=0x7f3ff5e535c0 <CPyCppyy::CPPOverload_Type>) at /usr/local/src/conda/python-3.10.12/Modules/gcmodule.c:2319
+#16 0x00007f3ff5dd6790 in CPyCppyy::(anonymous namespace)::mp_new(_typeobject*, _object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#17 0x00007f3ff5dff9e3 in CPyCppyy::BuildScopeProxyDict(unsigned long, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#18 0x00007f3ff5e021a3 in CPyCppyy::CreateScopeProxy(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, _object*, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#19 0x00007f3ff5e02dc5 in CPyCppyy::CreateScopeProxy(unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#20 0x00007f3ff5e02e26 in CPyCppyy::BindCppObjectNoCast(void*, unsigned long, unsigned int) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#21 0x00007f3ff5dcb930 in CPyCppyy::dm_get(CPyCppyy::CPPDataMember*, CPyCppyy::CPPInstance*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#22 0x0000561728e3872a in type_getattro (type=<optimized out>, name=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/typeobject.c:3923
+#23 0x00007f3ff5dde0e3 in CPyCppyy::meta_getattro(_object*, _object*) () from /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.04/x86_64-almalinux9.4-gcc114-opt/lib/libcppyy.so
+#24 0x0000561728e3db92 in PyObject_GetAttr (v=v
+entry=0x56172bd66250, name=0x7f40145f9c70) at /usr/local/src/conda/python-3.10.12/Objects/object.c:932
+#25 0x0000561728e34f03 in _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x561729923040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3592
+#26 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x561729923040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#27 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f40143be7b0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#28 _PyFunction_Vectorcall (func=0x7f40143be7a0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#29 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#30 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40145acd08, callable=0x7f40143be7a0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#31 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc2098fe40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#32 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40145acba0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#33 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40145acba0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#34 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc2098ff40, locals=locals
+entry=0x7f4014353b80, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#35 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401433f680, globals=globals
+entry=0x7f4014353b80, locals=locals
+entry=0x7f4014353b80) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#36 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014353b80, globals=0x7f4014353b80, source=0x7f401433f680) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#37 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#38 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f4014350c98, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#39 0x0000561728e3634b in do_call_core (kwdict=0x7f4014340340, callargs=0x7f4014350c80, func=0x7f4014b10e00, trace_info=0x7ffc20990110, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#40 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146668c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#41 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146668c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#42 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#43 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#44 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465dc08, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209902c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465da80, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#48 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465da80, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#49 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#50 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#51 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37dd0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990470, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b37c50, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#55 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b37c50, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#56 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#57 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#58 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#59 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40143601f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#60 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20990620, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#61 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014360040, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#62 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014360040, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#63 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#64 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#65 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#66 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f9850, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#67 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209907d0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#68 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f96c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#69 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f96c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#70 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#71 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#72 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc20990900, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#73 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20990990) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#74 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#75 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145e9fc0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#76 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145f8170, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x7f40145f7880, level=1) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#77 0x0000561728e34368 in import_name (level=0x7f4014a780f0, fromlist=0x7f40145f7880, name=0x7f40145f8170, f=0x7f401466df10, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#78 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401466df10, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#79 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f401466df10, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#80 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20990d10, locals=locals
+entry=0x7f40145ee400, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#81 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f401435d630, globals=globals
+entry=0x7f40145ee400, locals=locals
+entry=0x7f40145ee400) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#82 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f40145ee400, globals=0x7f40145ee400, source=0x7f401435d630) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#83 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#84 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145f86d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#85 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ee540, callargs=0x7f40145f86c0, func=0x7f4014b10e00, trace_info=0x7ffc20990ee0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#86 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b3f4c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#87 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b3f4c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#88 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#89 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#90 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#91 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b362b8, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#92 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991090, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#93 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36130, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#94 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36130, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#95 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#96 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#97 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#98 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147cefc0, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#99 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991240, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#100 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cee40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#101 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cee40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#102 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#103 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#104 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#105 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce3f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#106 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209913f0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#107 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce240, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#108 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce240, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#109 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#110 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#111 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#112 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f8950, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#113 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209915a0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#114 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f87c0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#115 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f87c0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#116 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#117 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#118 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209916d0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#119 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20991760) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#120 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#121 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40145ed3f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#122 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40145ed3f0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#123 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40145ed3f0, f=0x7f40147cea40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#124 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147cea40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#125 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f40147cea40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#126 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc20991ae0, locals=locals
+entry=0x7f4014634f00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#127 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40145de810, globals=globals
+entry=0x7f4014634f00, locals=locals
+entry=0x7f4014634f00) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#128 0x0000561728edb0da in builtin_exec_impl (module=<optimized out>, locals=0x7f4014634f00, globals=0x7f4014634f00, source=0x7f40145de810) at /usr/local/src/conda/python-3.10.12/Python/bltinmodule.c:1058
+#129 builtin_exec (module=<optimized out>, args=<optimized out>, nargs=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/clinic/bltinmodule.c.h:371
+#130 0x0000561728e40b63 in cfunction_vectorcall_FASTCALL (func=0x7f4014b10e00, args=0x7f40145ed0d8, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/methodobject.c:430
+#131 0x0000561728e3634b in do_call_core (kwdict=0x7f40145ed140, callargs=0x7f40145ed0c0, func=0x7f4014b10e00, trace_info=0x7ffc20991cb0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5917
+#132 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014666200, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4277
+#133 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014666200, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#134 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ad9520, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#135 _PyFunction_Vectorcall (func=0x7f4014ad9510, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#136 0x0000561728e35142 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#137 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f401465cc48, callable=0x7f4014ad9510) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#138 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20991e60, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#139 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f401465cac0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4181
+#140 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f401465cac0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#141 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014b5d760, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#142 _PyFunction_Vectorcall (func=0x7f4014b5d750, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#143 0x0000561728e30c5c in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#144 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f4014b37040, callable=0x7f4014b5d750) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#145 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992010, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#146 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014b36ec0, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4198
+#147 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f4014b36ec0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#148 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014ada0f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#149 _PyFunction_Vectorcall (func=0x7f4014ada0e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#150 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#151 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40147ce5f0, callable=0x7f4014ada0e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#152 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc209921c0, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#153 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40147ce440, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#154 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40147ce440, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#155 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb2f0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#156 _PyFunction_Vectorcall (func=0x7f4014adb2e0, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#157 0x0000561728e30850 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#158 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x7f40146f90d0, callable=0x7f4014adb2e0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:123
+#159 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, trace_info=0x7ffc20992370, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5893
+#160 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f40146f8f40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:4213
+#161 0x0000561728e4099c in _PyEval_EvalFrame (throwflag=0, f=0x7f40146f8f40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#162 _PyEval_Vector (kwnames=<optimized out>, argcount=<optimized out>, args=<optimized out>, locals=0x0, con=0x7f4014adb380, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#163 _PyFunction_Vectorcall (func=0x7f4014adb370, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:342
+#164 0x0000561728e40178 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=2, args=0x7ffc209924a0, callable=0x7f4014adb370, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/cpython/abstract.h:114
+#165 object_vacall (tstate=tstate
+entry=0x5617298c7cf0, base=base
+entry=0x0, callable=callable
+entry=0x7f4014adb370, vargs=vargs
+entry=0x7ffc20992530) at /usr/local/src/conda/python-3.10.12/Objects/call.c:734
+#166 0x0000561728e4e35b in _PyObject_CallMethodIdObjArgs (obj=0x0, name=name
+entry=0x561729078b00 <PyId__find_and_load.6>) at /usr/local/src/conda/python-3.10.12/Objects/call.c:825
+#167 0x0000561728d70909 in import_find_and_load (abs_name=0x7f40147a0bf0, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1522
+#168 PyImport_ImportModuleLevelObject (name=name
+entry=0x7f40147a0bf0, globals=<optimized out>, locals=<optimized out>, fromlist=fromlist
+entry=0x5617290807e0 <_Py_NoneStruct>, level=0) at /usr/local/src/conda/python-3.10.12/Python/import.c:1623
+#169 0x0000561728e34368 in import_name (level=0x7f4014a780d0, fromlist=0x5617290807e0 <_Py_NoneStruct>, name=0x7f40147a0bf0, f=0x7f4014aa1c40, tstate=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:6018
+#170 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=0x7f4014aa1c40, throwflag=<optimized out>) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:3695
+#171 0x0000561728ed3f90 in _PyEval_EvalFrame (throwflag=0, f=0x7f4014aa1c40, tstate=0x5617298c7cf0) at /usr/local/src/conda/python-3.10.12/Include/internal/pycore_ceval.h:46
+#172 _PyEval_Vector (tstate=tstate
+entry=0x5617298c7cf0, con=con
+entry=0x7ffc209928b0, locals=locals
+entry=0x7f4014745d40, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:5067
+#173 0x0000561728ed3ed7 in PyEval_EvalCode (co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/ceval.c:1134
+#174 0x0000561728f0442a in run_eval_code_obj (tstate=tstate
+entry=0x5617298c7cf0, co=co
+entry=0x7f40146083a0, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1291
+#175 0x0000561728eff833 in run_mod (mod=mod
+entry=0x5617299f4500, filename=filename
+entry=0x7f4014619980, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, flags=flags
+entry=0x7ffc20992a98, arena=arena
+entry=0x7f40147026f0) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1312
+#176 0x0000561728d966cd in pyrun_file (fp=fp
+entry=0x5617298a7370, filename=filename
+entry=0x7f4014619980, start=start
+entry=257, globals=globals
+entry=0x7f4014745d40, locals=locals
+entry=0x7f4014745d40, closeit=closeit
+entry=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:1208
+#177 0x0000561728ef9d1e in _PyRun_SimpleFileObject (fp=0x5617298a7370, filename=0x7f4014619980, closeit=1, flags=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:456
+#178 0x0000561728ef98b4 in _PyRun_AnyFileObject (fp=0x5617298a7370, filename=filename
+entry=0x7f4014619980, closeit=closeit
+entry=1, flags=flags
+entry=0x7ffc20992a98) at /usr/local/src/conda/python-3.10.12/Python/pythonrun.c:90
+#179 0x0000561728ef6aab in pymain_run_file_obj (skip_source_first_line=0, filename=0x7f4014619980, program_name=0x7f4014725c30) at /usr/local/src/conda/python-3.10.12/Modules/main.c:357
+#180 pymain_run_file (config=0x5617298ab7b0) at /usr/local/src/conda/python-3.10.12/Modules/main.c:376
+#181 pymain_run_python (exitcode=0x7ffc20992a94) at /usr/local/src/conda/python-3.10.12/Modules/main.c:591
+#182 Py_RunMain () at /usr/local/src/conda/python-3.10.12/Modules/main.c:670
+#183 0x0000561728ec7527 in Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /usr/local/src/conda/python-3.10.12/Modules/main.c:1090
+#184 0x00007f40148295d0 in __libc_start_call_main () from /lib64/libc.so.6
+#185 0x00007f4014829680 in __libc_start_main_impl () from /lib64/libc.so.6
+#186 0x0000561728ec7421 in _start ()
+===========================================================
+
+

@@ -1,1 +1,28 @@
--bash: python: command not found
+8482
+8483
+8484
+Warning: Run3 pp cross-section should be updated!
+8484	1669360340	1200		269.38		 221624072		805.00
+8484	1669363940	3600		271.92		 297778873		845.50
+8484	1669367540	3600		272.26		 310442319		855.50
+8484	1669371140	3600		272.42		 317194686		855.50
+8484	1669374740	3600		272.04		 304601397		851.50
+8484	1669378340	3600		272.05		 307015895		838.50
+2022-11-25 13:44:42 2022-11-25 13:12:20 0:05:00 2022-11-25 13:49:42
+8484	1669380582	2242		271.49		 288770572		836.00
+8485
+8486
+8487
+8488
+8489
+Warning: Run3 pp cross-section should be updated!
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 462, in <module>
+    main()
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 422, in main
+    __add_fill_to_profile(
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 292, in __add_fill_to_profile
+    __get_and_write_fill_measurement(
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 259, in __get_and_write_fill_measurement
+    profile_text.append(line)
+UnboundLocalError: local variable 'line' referenced before assignment

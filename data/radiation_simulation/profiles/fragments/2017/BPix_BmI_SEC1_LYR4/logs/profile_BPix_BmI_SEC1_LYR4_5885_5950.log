@@ -1,0 +1,14 @@
+5885
+Warning: Fill duration (17.483333333333334 min.) smaller than fill time delay, no data collected during fill 5885
+5886
+5887
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 463, in <module>
+    main()
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 423, in main
+    __add_fill_to_profile(
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 293, in __add_fill_to_profile
+    __get_and_write_fill_measurement(
+  File "/afs/cern.ch/user/s/singhsh/PixelMonitoring/src/radiation_simulation/prepare_profiles.py", line 241, in __get_and_write_fill_measurement
+    if last_valid_fill is not None:
+NameError: name 'last_valid_fill' is not defined
