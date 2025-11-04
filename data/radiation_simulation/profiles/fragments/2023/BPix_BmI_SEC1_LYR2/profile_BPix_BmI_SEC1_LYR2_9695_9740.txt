@@ -1,0 +1,1 @@
+Fill	Timestamp [s]	Duration [s]	Temperature [K]	Fluence [n_eq/cm2/s]	Leakage_current [mA/cm2]
